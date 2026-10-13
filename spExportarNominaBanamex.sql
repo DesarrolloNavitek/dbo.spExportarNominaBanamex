@@ -1,5 +1,3 @@
-EXEC spExportarNominaBanamex 'NVK',2026,'NOMINA',PSL28,'BX 9898'
-
 SET DATEFIRST 7
 SET ANSI_NULLS OFF
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
@@ -76,7 +74,7 @@ BEGIN
 																ELSE
 																(SELECT  CONVERT(VARCHAR,FechaPago,102) 
 																	   FROM  Nomina a 
-																	   LEFT JOIN nvk_tb_IncidenciasQuincenal b ON a.NoPeriodo=b.Quincena
+																	   LEFT JOIN nvk_tb_IncidenciasQuincenal b ON a.NoPeriodo=b.Periodo
 																	  WHERE a.Ejercicio = @Ejercicio
 																		AND a.Mov = @Mov
 																		AND a.MovID = @MovID 
